@@ -3,7 +3,7 @@ package model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Transacao {
+public class Transaction {
 
     private final int id_transaction;
     private final LocalDateTime datetime;
@@ -11,7 +11,7 @@ public class Transacao {
     private final String id_conta_credito;
     private final BigDecimal valor;
 
-    public Transacao(int id_transaction, LocalDateTime datetime, String id_conta_debito, String id_conta_credito, BigDecimal valor){
+    public Transaction(int id_transaction, LocalDateTime datetime, String id_conta_debito, String id_conta_credito, BigDecimal valor){
         this.id_transaction = id_transaction;
         this.datetime = datetime;
         this.id_conta_debito = id_conta_debito;

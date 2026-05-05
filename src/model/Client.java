@@ -2,12 +2,12 @@ package model;
 import java.math.BigDecimal;
 
 
-public class Cliente {
+public class Client {
 
     private final String id_conta;
     private BigDecimal saldo;
 
-    public Cliente(String id_conta, BigDecimal saldo){
+    public Client(String id_conta, BigDecimal saldo){
         this.id_conta = id_conta;
         this.saldo = saldo;
     }
@@ -20,8 +20,12 @@ public class Cliente {
         return saldo;
     }
 
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
+    public void debitar(BigDecimal valor) {
+        saldo = saldo.subtract(valor);
+    }
+
+    public void creditar(BigDecimal valor) {
+        saldo = saldo.add(valor);
     }
 
 }

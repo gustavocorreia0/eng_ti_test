@@ -6,16 +6,16 @@ import java.util.List;
 
 public class SeededData {
 
-    private final List<Cliente> clientes = List.of(
-            new Cliente("938485762", new BigDecimal("180.00")),
-            new Cliente("347586970", new BigDecimal("1200.00")),
-            new Cliente("2147483649", new BigDecimal("0.00")),
-            new Cliente("675869708", new BigDecimal("4900.00")),
-            new Cliente("238596054", new BigDecimal("478.00")),
-            new Cliente("573659065", new BigDecimal("787.00")),
-            new Cliente("210385733", new BigDecimal("10.00")),
-            new Cliente("674038564", new BigDecimal("400.00")),
-            new Cliente("563856300", new BigDecimal("1200.00"))
+    private final List<Client> clientes = List.of(
+            new Client("938485762", new BigDecimal("180.00")),
+            new Client("347586970", new BigDecimal("1200.00")),
+            new Client("2147483649", new BigDecimal("0.00")),
+            new Client("675869708", new BigDecimal("4900.00")),
+            new Client("238596054", new BigDecimal("478.00")),
+            new Client("573659065", new BigDecimal("787.00")),
+            new Client("210385733", new BigDecimal("10.00")),
+            new Client("674038564", new BigDecimal("400.00")),
+            new Client("563856300", new BigDecimal("1200.00"))
     );
 
     private final List<Transacao> transacoes = List.of(
