@@ -19,7 +19,11 @@ public class TransactionService {
         Client destino = clientRepository.findClient(transaction.getId_conta_credito());
 
         if (origem.getSaldo().compareTo(transaction.getValor()) < 0) {
-            System.out.println("Transacao foi cancelada por falta de saldo");
+            System.out.printf(
+                "Transacao foi cancelada por falta de saldo! Saldo disponível: %s   Valor da Transação: %s%n",
+                origem.getSaldo(),
+                transaction.getValor()
+            );
             return;
         }
 
@@ -28,6 +32,12 @@ public class TransactionService {
 
         clientRepository.saveClient(origem);
         clientRepository.saveClient(destino);
+
+        System.out.printf(
+                "Transação foi efetivada com sucesso! Novos saldos: Conta Origem: %s | Conta Destino: %s%n",
+                origem.getSaldo(),
+                destino.getSaldo()
+        );
 
     }
 
