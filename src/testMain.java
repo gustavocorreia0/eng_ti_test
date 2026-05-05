@@ -15,50 +15,6 @@ public class testMain{
 
 }
 
-class dadosCliente {
-
-    private final String idConta;
-    private BigDecimal saldo;
-
-    public dadosCliente(String idConta, BigDecimal saldo){
-        this.idConta = idConta;
-        this.saldo = saldo;
-    }
-
-    public String getIdConta() {
-        return idConta;
-    }
-
-    public BigDecimal getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(BigDecimal saldo) {
-        this.saldo = saldo;
-    }
-
-}
-
-class dadosTransacao {
-
-    private final String idContaTransacionada;
-    private final BigDecimal nrValor;
-
-    public dadosTransacao(String id, BigDecimal valor){
-        this.idContaTransacionada = id;
-        this.nrValor = valor;
-    }
-
-    public String getIdContaTransacionada() {
-        return idContaTransacionada;
-    }
-
-    public BigDecimal getNrValor() {
-        return nrValor;
-    }
-
-}
-
 class dadosPendentes {
 
     private final List<dadosCliente> clientes = List.of(
