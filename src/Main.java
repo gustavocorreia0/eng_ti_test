@@ -4,6 +4,7 @@ import service.TransactionService;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -26,7 +27,7 @@ public class Main {
                 new Transaction(8, LocalDateTime.parse("2023-09-09T14:19:01"), "573659065", "675869708", new BigDecimal("150"))
         );
 
-        transacoes.parallelStream().forEach(service::postTransaction);
+        transacoes.stream().sorted(Comparator.comparing(Transaction::getDatetime)).forEach(service::postTransaction);
 
     }
 

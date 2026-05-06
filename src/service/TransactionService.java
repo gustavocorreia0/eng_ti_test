@@ -14,13 +14,13 @@ public class TransactionService {
         this.clientRepository = clientRepository;
     }
 
-    public synchronized void postTransaction(Transaction transaction) {
+    public void postTransaction(Transaction transaction) {
         Client origem = clientRepository.findClient(transaction.getId_conta_debito());
         Client destino = clientRepository.findClient(transaction.getId_conta_credito());
 
         if (origem.getSaldo().compareTo(transaction.getValor()) < 0) {
             System.out.printf(
-                "Transacao foi cancelada por falta de saldo! Saldo disponível: %s   Valor da Transação: %s%n",
+                "Transacao foi cancelada por falta de saldo!%nSaldo disponível: %s\tValor da Transação: %s%n",
                 origem.getSaldo(),
                 transaction.getValor()
             );
